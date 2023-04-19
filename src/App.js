@@ -1,5 +1,6 @@
 
-import Expenses from "./Components/Expenses";
+import Expenses from "./Components/Expense/Expenses";
+import NewExpense from "./Components/NewExpense/NewExpense";
 import './App.css'
 
 function App() {
@@ -30,8 +31,12 @@ function App() {
       date: new Date (2023, 10, 2)
     },
   ]
+  const addHandler =(expense)=>{
+    console.log(expense)
+  }
   return (
     <div className="App">
+      <NewExpense addValueHandler={addHandler}></NewExpense>
       <Expenses items={expenses}></Expenses>
          </div>
   );
